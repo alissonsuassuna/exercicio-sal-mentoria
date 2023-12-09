@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+        <h2>Calculo</h2>
+
+        <form id="form">
+
+            <label for="sal"> Salario
+                <input type="number" name="salario" id="sal" />
+            </label>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        <span id="txt">aqui</span>
+    </main>
+    <script>
+         /* Exercício 05 - Faça um site que receba o salário base de um funcionario, calcule e mostre o
+        salário a receber, sabendo-se que o funcionário tem gratificação de 5% sobre o salário base
+        e paga imposto de 7% sobre este salário. */
+
+        let formulario = document.querySelector('#form')
+        let span = document.querySelector('#txt')
+
+        formulario.addEventListener('submit', (event) => {
+            event.preventDefault()
+            console.log('Jesus é nosso Rei.')
+
+            let salario = Number(document.querySelector('input[name=salario]').value)
+
+            const gratificacao = salario * 5/100
+            const imposto = salario * 7/100
+
+            const novoSalario = (salario + gratificacao) - imposto
+
+            console.log(novoSalario)
+
+            span.innerHTML = `<h1>${novoSalario}</h1>`
+        })
+    </script>
+</body>
+</html>
